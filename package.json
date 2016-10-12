@@ -1,0 +1,18 @@
+{
+  "name": "generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "generate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ruth M. Pardee",
+  "license": "ISC",
+  "dependencies": {
+    "es-module-loader": "^1.2.1",
+    "express": "^4.14.0",
+    "jquery": "^3.1.1",
+    "systemjs": "^0.19.39",
+    "traceur": "0.0.111"
+  }
+}

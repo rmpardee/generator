@@ -5,10 +5,69 @@
 </head>
 <body>
   <form>
-    <input type="text" name="companyName"/>
-    <label for="companyName">Company Name</label>
-  </form>
+    <label for="name">Company Name: </label>
+    <input type="textarea" name="name"/><br>
 
-  <script type="text/javascript" src="./generate.js"></script>
+    <label for="teamAspect1">Team Aspect: </label>
+    <input type="textarea" name="teamAspect"/><br>
+
+    <label for="productAspect">Product Aspect: </label>
+    <input type="textarea" name="productAspect"/><br>
+
+    <label for="teamMO1">Team MO 1: </label>
+    <input type="textarea" name="teamMO1"/><br>
+
+    <label for="teamValue">Team Value: </label>
+    <input type="textarea" name="teamValue"/><br>
+
+    <label for="productGoal">Product Goal: </label>
+    <input type="textarea" name="productGoal"/><br>
+
+    <label for="frameworks">Frameworks: </label>
+    <input type="textarea" name="frameworks"/><br>
+
+    <label for="otherTechnology">Other Technology: </label>
+    <input type="textarea" name="otherTechnology"/><br>
+
+    <label for="workflow">Workflow: </label>
+    <input type="textarea" name="workflow"/><br>
+
+    <label for="productPride">Product Pride: </label>
+    <input type="textarea" name="productPride"/><br>
+
+    <button type="submit">Submit</button>
+  </form>
+  <p id='letter'></p>
+
+  <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="module" src="npm_modules/traceur/bin/traceur.js"></script>
+  <script type="module" src="npm_modules/es-module-loader/core/common.js"></script>
+  <script type="text/javascript" src="node_modules/systemjs/dist/system.js"></script>
+  <script>
+    // set our baseURL reference path
+    SystemJS.config({
+      baseURL: '/',
+      map: {
+        // 'plugin-traceur': 'path/to/systemjs-plugin-traceur/plugin-traceur.js',
+        'traceur': 'npm_modules/traceur/bin/traceur.js',
+        'traceur-runtime': 'npm_modules/traceur/bin/traceur-runtime.js'
+      },
+      meta: {
+        'traceur': {
+          format: 'global',
+          exports: 'traceur'
+        },
+        'traceur-runtime': {
+          format: 'global',
+          exports: '$traceurRuntime'
+        }
+      },
+      transpiler: 'traceur',
+      transpilerRuntime: false
+    });
+
+    SystemJS.import('generate.js');
+  </script>
+
 </body>
 </html>
